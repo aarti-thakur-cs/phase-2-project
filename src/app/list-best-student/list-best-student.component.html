@@ -1,0 +1,24 @@
+<h1 style="text-align:center;font-size: 25px;color:grey;">Top Restuarants Listing</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Address</th>
+      <th scope="col">Email</th>
+      <th scope="col">score</th>
+      <th scope="col">Operations</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let item of collection[0]">
+    <tr *ngIf="item.rating >4">
+        <td>{{item.id}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.address}}</td>
+        <td>{{item.email}}</td>
+        <td>{{item.score}}</td>
+        <td><i (click)="deleteResto(item.id)" class="fa fa-trash" style="font-size:25px;color:red;"></i>
+        </td>
+    </tr>
+  </tbody>
+</table>
